@@ -1,52 +1,49 @@
 # customer-churn
-predicting customer churn in an online retail company
-**Machine Learning Customer Retention Analysis**
-Initiative Objective
-This machine learning initiative aims to forecast customer attrition and analyze buyer segments in e-commerce through predictive modeling and cluster analysis. The workflow incorporated comprehensive data exploration, preprocessing, and multiple algorithmic approaches using a Kaggle-sourced transaction dataset.
 
-Key Components
+This project applies supervised and unsupervised machine learning techniques to predict customer churn and segment users for an online retail company. The analysis leverages a Kaggle dataset and aims to support data-driven retention and marketing strategies.
 
-Exploratory Analysis Phase
-Examined dataset structure, variable correlations, and data quality issues
+## Project Goals
 
-Identified class imbalances (churn vs. retained customers) and missing values
+- **Churn Prediction:** Identify customers likely to leave using classification algorithms.
+- **Customer Segmentation:** Group customers with similar behaviors to tailor promotions.
 
-Visualized patterns in customer behavior metrics
+## Dataset
 
-Data Preparation
-Addressed missing observations and anomalous values
+The dataset includes features such as tenure, city tier, time spent on app, number of devices, satisfaction score, order history, payment preferences, and more.
 
-Encoded categorical features and normalized numerical scales
+## Methodology
 
-Implemented SMOTE/undersampling to balance class distributions
+### 1. Exploratory Data Analysis (EDA)
+- Assessed data structure, variable types, correlations, and class imbalances.
+- Visualized key patterns and handled missing values.
 
-Predictive Modeling Approaches
-Classification Techniques
+### 2. Data Preprocessing
+- Addressed missing and anomalous values.
+- Encoded categorical variables.
+- Balanced the dataset using techniques like SMOTE.
 
-Random Forest: Demonstrated 92% accuracy with strong precision (0.89) but moderate recall
+### 3. Classification Models
+- **Random Forest:** High accuracy and precision, moderate recall.
+- **XGBoost:** Best overall performance across metrics.
+- **Logistic Regression:** Used as a baseline.
 
-XGBoost: Surpassed other models with 94% accuracy and optimal AUC-ROC (0.96)
+### 4. Clustering Techniques
+- **K-Means with t-SNE:** Produced the most meaningful clusters.
+- **DBSCAN:** Less effective due to density variations.
+- **Hierarchical Clustering:** Used for dendrogram visualization.
 
-Logistic Regression: Achieved baseline performance (82% accuracy)
+## Results
 
-Cluster Analysis
+- **XGBoost** achieved the highest accuracy and AUC-ROC for churn prediction.
+- **K-Means + t-SNE** provided the most actionable customer segments.
 
-K-Means + t-SNE: Yielded more precise customer groupings than PCA alternatives
+## Tech Stack
 
-DBSCAN: Struggled with density variations in purchase patterns
+- **Languages:** Python
+- **Libraries:** pandas, scikit-learn, xgboost, seaborn, matplotlib, t-SNE
+- **Data Source:** [Kaggle E-commerce Dataset](https://www.kaggle.com/)
 
-Hierarchical Methods: Dendrogram visualization revealed 5 distinct buyer tiers
+## Getting Started
 
-Technical Implementation
-Tools: Python's scikit-learn, XGBoost, pandas, and visualization libraries
-
-Dataset: Public retail transaction records from Kaggle repository
-
-Strategic Implications
-The analysis enables targeted retention campaigns through:
-
-Early identification of at-risk customers via XGBoost predictions
-
-Customized marketing strategies for identified customer clusters
-
-Resource optimization based on churn probability thresholds
+1. Clone the repository.
+2. Install dependencies:  
